@@ -52,7 +52,6 @@
       top: 60px;
     }
 
-    /* Popup */
     #popup {
       display: none;
       position: fixed;
@@ -83,7 +82,6 @@
       font-size: 1.4em;
     }
 
-    /* Floating hearts */
     .heart {
       position: fixed;
       font-size: 22px;
@@ -97,7 +95,6 @@
       100% { transform: translateY(-10vh); opacity: 0; }
     }
 
-    /* Confetti */
     .confetti {
       position: fixed;
       width: 10px;
@@ -123,13 +120,16 @@
   <div id="popup">
     <h2>💖 Ojasvi 💖</h2>
     <img src="IMG_5747.jpeg" alt="Us 💕">
-    <p>You are my forever,<br> Valentine 💞</p>
+    <p>You are my forever,<br>my Valentine 💞</p>
   </div>
 
   <script>
     const noBtn = document.getElementById("no");
     const yesBtn = document.getElementById("yes");
     const popup = document.getElementById("popup");
+
+    // CHANGE THIS TO YOUR WHATSAPP NUMBER (WITH COUNTRY CODE, NO + OR SPACES)
+    const phoneNumber = "18573588001"; // example: 919876543210
 
     // No button runs away
     noBtn.addEventListener("mouseover", () => {
@@ -143,6 +143,17 @@
     yesBtn.addEventListener("click", () => {
       popup.style.display = "flex";
       launchConfetti();
+
+      const message = encodeURIComponent(
+        "I said YES 💖 You are my forever Valentine 😘"
+      );
+
+      setTimeout(() => {
+        window.open(
+          `https://wa.me/${phoneNumber}?text=${message}`,
+          "_blank"
+        );
+      }, 1200);
     });
 
     // Floating hearts
