@@ -12,7 +12,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       overflow: hidden;
     }
 
@@ -63,22 +63,30 @@
       flex-direction: column;
       color: white;
       text-align: center;
+      padding: 20px;
+    }
+
+    #popup img {
+      max-width: 280px;
+      width: 80%;
+      border-radius: 20px;
+      margin: 20px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     #popup h2 {
-      font-size: 2.5em;
+      font-size: 2.4em;
       margin-bottom: 10px;
     }
 
     #popup p {
-      font-size: 1.5em;
+      font-size: 1.4em;
     }
 
-    /* Hearts */
+    /* Floating hearts */
     .heart {
       position: fixed;
-      color: #ff2e63;
-      font-size: 20px;
+      font-size: 22px;
       animation: floatUp 6s linear infinite;
       opacity: 0.8;
     }
@@ -94,7 +102,6 @@
       position: fixed;
       width: 10px;
       height: 10px;
-      background: red;
       animation: fall 3s linear forwards;
     }
 
@@ -115,6 +122,7 @@
 
   <div id="popup">
     <h2>💖 Ojasvi 💖</h2>
+    <img src="IMG_5747.jpeg" alt="Us 💕">
     <p>You are my forever,<br>my Valentine 💞</p>
   </div>
 
@@ -143,7 +151,8 @@
       heart.className = "heart";
       heart.innerText = "💖";
       heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (20 + Math.random() * 20) + "px";
+      heart.style.color = ["#ff2e63","#fff","#ffd1dc"][Math.floor(Math.random()*3)];
+      heart.style.fontSize = (18 + Math.random() * 20) + "px";
       document.body.appendChild(heart);
       setTimeout(() => heart.remove(), 6000);
     }
@@ -151,7 +160,7 @@
 
     // Confetti
     function launchConfetti() {
-      for (let i = 0; i < 80; i++) {
+      for (let i = 0; i < 90; i++) {
         const confetti = document.createElement("div");
         confetti.className = "confetti";
         confetti.style.left = Math.random() * 100 + "vw";
